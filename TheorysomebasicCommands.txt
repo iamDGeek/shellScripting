@@ -1,0 +1,88 @@
+shell(user) --> kernel(memory allocation) --> hardware resouces
+
+$ --> Normal user
+# --> super user
+
+linux file extension is not important, it is based upon the file content
+
+echo "hi durga" > /dev/pts/1     --> prints the hi durga in other terminal 1
+
+mkdir {0..20..2}/file{0..2}.txt  --> will create files in the directories
+
+To stop any process i.e. to kill process     ----->     kill  {PID}
+
+To get information about all running process ----->     ps -ag
+
+To stop all process except your shell        ------>    kill 0
+
+******************************************************************************************
+
+wc --bytes filemessage.sh
+66 filemessage.sh
+
+root@TR-53RJ9Y2:~# wc --chars filemessage.sh
+66 filemessage.sh
+
+root@TR-53RJ9Y2:~# wc --lines filemessage.sh
+5 filemessage.sh
+
+root@TR-53RJ9Y2:~# wc --words filemessage.sh
+7 filemessage.sh
+
+root@TR-53RJ9Y2:~# wc --max-line-length filemessage.sh
+******************************************************************************************
+
+Here the output of ls command is given as 
+input to more command So that output is 
+printed one screen full page at a time       ------>  ls | more
+
+Here output of who command is given as 
+input to sort command So that it will print 
+sorted list of users	                       ------>    $ who | sort 
+
+Here output of who command is given as input to wc command So that it will number of
+  user who logon to system                   ------->   $ who | wc -l 
+
+Here output of ls command is given as input to wc command So that it will print 
+number of files in current directory.       -------    $ ls -l | wc  -l   
+	
+$ who | grep raju --  Here output of who command is given as input to grep command So that it will print 
+	               if particular user name if he is logon or nothing is printed ( To see for particular user logon)
+			   
+grep -i "tom" /etc/passwd  --  I will search for the user "tom" in the Linux passwd file [ global regular expression print]
+	
+grep 'string1 string2'  filename       ----      cat otherfile | grep 'something'
+	
+Recursive use of grep                   ---       grep -r "mydomain.com" /etc/apache2/
+	
+grep -h -R "mydomain.com" /etc/nginx/.  sample Output:
+	
+grep -r "mydomain.com" /etc/nginx/
+	
+grep -L "how" *.txt   -------   do not contain the searched pattern  -- 
+
+d --> directory file
+l --> link file
+- --> ordinary file
+
+ls nameofdirectory	-- will output all the folder in nameofdirectory
+
+There might be situations wherein you don't need the grep command to produce 
+anything in the output. Instead, you just want to know whether or not a match was found based on
+the command's exit status. This can be achieved using the -q command line option.
+While the -q option mutes the output, the tool's exit status can be confirmed by the 
+'echo $?' command. In case of grep, the command exits with '0' status when it's successful 
+		
+grep -x "how are you?" *.txt     --   matches the exact pattern
+		
+grep -l 'primary' *.c  -- must use the -l option to list file names whose contents mention a particular word
+		
+If you want, you can  also make the grep command obtain patterns from a file. 
+ The tool's -f command line option lets you do this. ---------   grep -f input *.txt
+	
+It's when you use the -e command line option, the command understands what 
+exactly you are trying to search in this case:       ---------   grep -e -how *.txt
+
+The sync command forces an immediate write of all cached data to disk.
+	
+
